@@ -13,7 +13,7 @@ int _atoi(char *s)
 	int sign;
 	unsigned int num;
 	char *temp;
-
+    
 	temp = s;
 	num = 0;
 	sign = 1;
