@@ -3,22 +3,32 @@
 #include <stdlib.h>
 
 /**
- * _memcpy - Copies memory area
+ * _strdup - duplicates a string into newly allocated array
  *
- * @dest: where to copy the memory to
- * @n: the number of bytes
- * @src: the memory area to copy from
+ * @str: string to duplicate
  *
- * Return: a pointer to @dest
+ * Return: pointer to new string
  */
-
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_strdup(char *str)
 {
-	unsigned int i;
+	int size = 0;
+	char *ptr, *ret;
 
-	for (i = 0; i < n; i++)
-		dest[i] = src[i];
+	if (!str)
+		return (NULL);
 
-	return (dest);
+	ptr = str;
+	while (*ptr++)
+		size++;
+
+	ret = malloc(size + 1);
+	if (!ret)
+		return (NULL);
+
+	ptr = ret;
+	while (*str)
+		*ptr++ = *str++;
+
+	*ptr = 0;
+	return (ret);
 }
-
