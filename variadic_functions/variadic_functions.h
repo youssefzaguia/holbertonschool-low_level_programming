@@ -3,6 +3,13 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+/**
+ * struct types - struct
+ *
+ * @type: char
+ * @f: function
+ *
+*/
 typedef struct types
 {
 	char type;
